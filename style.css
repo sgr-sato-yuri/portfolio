@@ -83,11 +83,8 @@ h2{
     margin: auto;
 }
 
-.pic-1{
-    background-image: url(pic/top.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-width: 50vw;
+.pic-1 img{
+    width: 50vw;
     height: auto;
 }
 .pic-1{
@@ -243,7 +240,7 @@ p[id="result"]{
 button[id="reset"]{
     margin-top: 20px;
 }
-.gifpic{
+.gif{
     width: 70%;
 }
 
