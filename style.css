@@ -1,0 +1,259 @@
+body{
+    background-color: #4d484a;
+    margin: 0px;
+    /**/
+    position: relative;
+    /*はみ出た部分を隠す‐X軸*/
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family:"Yu gothic","Arial","Hiragino Sans",sans-serif;
+}
+.empty{
+    margin: 150px;
+}
+/*ヘッダー*/
+header{
+    background-color: #94a1a9;
+    color: #fbfaef;
+    width: 100vw;
+    height: 97px;
+    top: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.header-list ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10vw;
+}
+.header-list li{
+    padding: 3vw;
+}
+.header-list a{
+    color: #fbfaef;
+}
+.header-list li:hover{
+    background-color: #fbfaef22;
+    border-radius: 100px;
+}
+.header-list:hover a{
+    cursor: pointer;
+}
+
+/*メインページ*/
+.main{
+    margin-top: 97px;
+    color: #b1c7d4;
+}
+a{
+    text-decoration: none;
+    color: #b1c7d4;
+}
+.main-intro{
+    display: flex;
+    justify-content: space-between;
+}
+.main-logo{
+    width: 50vw;
+    padding-top: 10vw;
+}
+h2{
+    font-size: 72px;
+    text-align: center;
+    margin: auto;
+}
+.main-links{
+    list-style: none;
+    text-align: center;
+    
+}
+.main-links li{
+    float: left;
+    padding-right: 2vh;
+}
+.main-links img{
+    width:10vw;
+    max-width: 50px;
+}
+.main-links p{
+    margin: auto;
+}
+
+.pic-1 img{
+    width: 50vw;
+    height: auto;
+}
+.pic-1{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 79px;
+}
+
+/*アバウト*/
+.about{
+    margin-bottom: 79px;
+    text-align: center;
+}
+.sub{
+    margin: -20px auto 50px auto;
+}
+.pr{
+    width: 90%;
+    margin: auto;
+    text-align: left;
+}
+.job{
+    width: 90%;
+    margin-left: 5vw;
+    text-align: left;
+}
+
+/*イラスト*/
+.illust{
+    margin-bottom: 79px;
+    text-align: center;
+}
+.illust-links img{
+    width: 28vw;
+    height: auto;
+    padding: 10px 10px 10px 10px;
+}
+.illust-links{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 2vw;
+}
+
+/*UTAU*/
+.utau{
+    margin-bottom: 79px;
+    text-align: center;
+}
+.utau-links{
+    list-style: none;
+}
+.audioplayer{
+    position: relative;
+    margin: auto;
+    width: 70%;
+    height: 170px;
+    background-color: #bba0c5;
+    border-radius: 10px;
+}
+.audioplayer h4{
+    text-align: left;
+    color: #fbfaef;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.audioplayer p{
+    color: #1e2232;
+}
+.button button{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 30px;
+}
+.button span{
+    margin-left: 20px;
+}
+input[name="seek"]{
+    width: 70%;
+}
+
+
+/*プログラム*/
+.program{
+    text-align: center;
+}
+.vm{
+    margin: 79px;
+}
+
+form[name=colorcode]{
+    margin: auto;
+    text-shadow: 0px 0px 3px #1e2232;
+    border-radius: 15px;
+}
+input[type="number"]{
+    width: 50px;
+}
+
+h4{
+    margin-top: 40px;
+}
+details{
+    margin-top: 20px;
+}
+.rec{
+    text-shadow: none;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.frame{
+    display: flex;
+    justify-content: center;
+}
+.answer{
+    margin-top: 15px;
+}
+input[readonly]{
+    width: 30px;
+    text-align: center;
+}
+.hit{
+    margin-right: 20px;
+}
+table{
+    margin-top: 15px;
+    border-collapse: collapse;
+    color: #1e2232;
+}
+th,td{
+    background-color: #b1c7d4;
+    padding: 0 10px;
+    border: 1px solid #1e2232;
+    height: 30px;
+}
+.left{
+    margin-right: 10px;
+}
+.btn{
+    margin-top: 30px;
+}
+.clear{
+    margin-right: 40px;
+}
+p[id="result"]{
+    height: 23px;
+    margin: 0;
+}
+button[id="reset"]{
+    margin-top: 20px;
+}
+
+
+/*フッター*/
+footer{
+    background-color: #1e2232;
+    color: #b9505a;
+    width: 100vw;
+    height: 79px;
+    display: flex;
+    justify-content: space-between;   
+}
+.footer-logo h1{
+    font-size: 18px;
+}
+.footer-logo p{
+    font-size: 12px;
+    padding-left:10px;
+}
