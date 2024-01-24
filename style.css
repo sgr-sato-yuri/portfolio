@@ -83,7 +83,10 @@ h2{
     margin: auto;
 }
 
-.pic-1 img{
+.pic-1{
+    background-image: url(pic/top.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
     width: 50vw;
     height: auto;
 }
