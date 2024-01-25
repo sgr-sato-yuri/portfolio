@@ -164,7 +164,7 @@ h2{
     position: relative;
     margin: auto;
     width: 90%;
-    max-width: 700px;
+    max-width: 500px;
     height: 170px;
     background-color: #bba0c5;
     border-radius: 10px;
@@ -290,7 +290,7 @@ footer{
     padding-left:10px;
 }
 
-@media(max-width:768px) {
+@media(max-width:480px) {
     *{
         -webkit-text-size-adjust: none;
         -moz-text-size-adjust: none;
@@ -357,12 +357,21 @@ footer{
         font-size: 20px;
         height: 40px;
         margin: 10px;
+        border-radius: 30px;
     }
     .btn{
         margin-top: 10px;
     }
     button{
+        min-width: 50px;
+        height: 50px;
+        border-radius: 100px;
         font-size: 20px;
+    }   
+}
+
+@media(min-width:481px) and (max-width:768px){
+    header{
+        color: #b9505a;
     }
-    
 }
