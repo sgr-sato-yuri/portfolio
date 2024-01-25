@@ -1,50 +1,58 @@
 //Hit & Blow
-const ten = [0,1,2,3,4,5,6,7,8,9]
-
-function rand(array) {
-    array.sort(()=> Math.random() - 0.5);
-}
-
-function resetans() {
-    const shuffle = rand(ten)
-    let xxx = shuffle[0]
-    let xx = shuffle[1]
-    let x = shuffle[2]
-    let answer = String(xxx) + String(xx) + String(x)
-    return answer
-}
-
+const ten = [0,1,2,3,4,5,6,7,8,9];
 
 var your_xxx = document.getElementById("xxx").value;
 var your_xx = document.getElementById("xx").value;
 var your_x = document.getElementById("x").value;
 
-var hit = 0
-var blow = 0
-var ent = 0
+var xxx = 0;
+var xx = 0;
+var x = 0;
 
-var hist = document.getElementById("history")
+var hit = 0;
+var blow = 0;
+var ent = 0;
+
+var hist = document.getElementById("history");
+
+
+function rand(array) {
+    return array.slice().sort(() => Math.random() - 0.5);
+}
+
+var answerG = "aaa";
+function resetans() {
+    var shuffle = rand(ten);
+    xxx = shuffle[0];
+    xx = shuffle[1];
+    x = shuffle[2];
+    let answer = String(xxx) + String(xx) + String(x);
+    answerG = answer;
+    return answer;
+}
+
+
 
 function getnum(num) {
-    if(your_xxx == ""){
+    if(your_xxx === ""){
         document.getElementById("xxx").value = num;
         your_xxx = num;
         document.getElementById(num).style.opacity = 0.5;
-    }else if(your_xx == ""){
+    }else if(your_xx === ""){
         if(num == your_xxx){
             document.getElementById(num).style.opacity = 1;
             document.getElementById("xxx").value = "";
-            your_xxx = ""
+            your_xxx = "";
         }else{
         document.getElementById("xx").value = num; 
         your_xx = num;
         document.getElementById(num).style.opacity = 0.5;
         }
-    }else if(your_x == ""){
+    }else if(your_x === ""){
         if(num == your_xx){
             document.getElementById(num).style.opacity = 1;
             document.getElementById("xx").value = "";
-            your_xx = ""
+            your_xx = "";
         }else{
         document.getElementById("x").value = num; 
         your_x = num;
@@ -55,6 +63,10 @@ function getnum(num) {
 
 function judge() {
     if(your_x !== ""){
+        xxx = answerG.slice(0,1);
+        xx = answerG.slice(1,2);
+        x = answerG.slice(2,3);
+
         your_xxx == xxx ? hit = hit + 1 : "";
         your_xx == xx ? hit = hit + 1 : "";
         your_x == x ? hit = hit + 1 : "";
@@ -90,17 +102,18 @@ function clearanswer() {
     var i = 0
     while (i < 10) {
         document.getElementById(i).style.opacity = 1;
-        i = i + 1
+        i = i + 1;
     }
 }
 function resetall() {
     clearanswer();
-    document.getElementById("result").textContent = "";
-    console.log(ent)
+    document.getElementById("result").textContent = "GAME START!";
     while(0<ent){
         hist.rows[ent].cells[0].textContent = "";
         hist.rows[ent].cells[1].textContent = "";
         hist.rows[ent].cells[2].textContent = "";
-        ent = ent-1
+        ent = ent-1;
     }
+    let answer = resetans();
+    document.getElementById("result").textContent = answer;
 }
