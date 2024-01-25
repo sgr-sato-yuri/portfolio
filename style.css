@@ -289,7 +289,7 @@ footer{
     padding-left:10px;
 }
 
-@media (max-width:768px) {
+@media screen and(max-width:768px) {
     *{
         -webkit-text-size-adjust: none;
         -moz-text-size-adjust: none;
@@ -321,7 +321,7 @@ footer{
         height: 90vh;
         width: 100vw;
         background-size: contain;
-        background-repeat: no-repeat; 
+        background-repeat: round; 
     }
 
     h3{
