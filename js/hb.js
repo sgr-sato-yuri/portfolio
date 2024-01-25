@@ -115,5 +115,4 @@ function resetall() {
         ent = ent-1;
     }
     let answer = resetans();
-    document.getElementById("result").textContent = answer;
 }
