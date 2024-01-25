@@ -66,14 +66,16 @@ h2{
     text-align: center;
     margin: auto;
 }
-.main-links{
+.main-links ul{
     list-style: none;
-    text-align: center;
+    width: 40vw;
+    margin: auto;
+    padding-left: 2vw;
     
 }
 .main-links li{
     float: left;
-    padding-right: 2vh;
+    padding-right: 2vw;
 }
 .main-links img{
     width:10vw;
@@ -128,6 +130,27 @@ h2{
     justify-content: space-evenly;
     padding-right: 2vw;
 }
+.bg{
+    background-color: #1e223299;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    display: flex;
+    z-index: 3;
+    display: none;
+}
+.large{
+    width: 100vw;
+    display: flex;
+    text-align: center;
+
+}
+.large img{
+    width: auto;
+    height: 90%;
+    margin: auto;
+}
 
 /*UTAU*/
 .utau{
@@ -140,7 +163,7 @@ h2{
 .audioplayer{
     position: relative;
     margin: auto;
-    width: 70%;
+    width: 90%;
     height: 170px;
     background-color: #bba0c5;
     border-radius: 10px;
@@ -154,6 +177,11 @@ h2{
 .audioplayer p{
     color: #1e2232;
 }
+.time{
+    width: 90%;
+    white-space: nowrap;
+}
+
 .button button{
     width: 40px;
     height: 40px;
@@ -259,4 +287,81 @@ footer{
 .footer-logo p{
     font-size: 12px;
     padding-left:10px;
+}
+
+@media (max-width:768px) {
+    *{
+        -webkit-text-size-adjust: none;
+        -moz-text-size-adjust: none;
+        text-size-adjust: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header{
+        height: 9vh;
+        color: #b9505a;
+    }
+    .main{
+        margin-top: 9vh;
+    }
+    .main-left{
+        position: relative;
+        top: 200px;
+    }
+    h2{
+        font-size: 39px;
+        margin-bottom: 10px;
+    }
+    .pic-1 img{
+        display: none;
+    }
+    .main-intro{
+        background-image: url(pic/top.jpg);
+        height: 90vh;
+        width: 100vw;
+        background-size: contain;
+        background-repeat: no-repeat; 
+    }
+
+    h3{
+        font-size: 39px;
+        margin-top: 50px;
+    }
+    .sub{
+        font-size: 20px;
+        margin: 20px auto;
+        margin-bottom: 50px;
+    }
+    p{
+        width: 80%;
+        font-size: 20px;
+        margin: auto;
+    }
+
+    .audioplayer{
+        height: 230px;
+    }
+    h4{
+        padding: 10px;
+    }
+    .button{
+        margin: 10px;
+    }
+
+    form[name=colorcode]{
+        font-size: 30px;
+    }
+    input{
+        font-size: 20px;
+        height: 40px;
+        margin: 10px;
+    }
+    .btn{
+        margin-top: 10px;
+    }
+    button{
+        font-size: 20px;
+    }
+    
 }

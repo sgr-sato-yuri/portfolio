@@ -2,6 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>index</title>
     </head>
@@ -21,25 +22,31 @@
 <!--メインページ-->
 <div class="main">
     <div class="main-intro">
-        <div class="main-logo">
-            <h2>（仮）</h2>
-            <ul class="main-links">
-                <li><a href="https://twitter.com/nakoto_2or3" target="_blank"><img src="pic/Twitter.png" alt="twitter"><p>twitter</p></a></li>
-                <!--<li><img src="pic\pixiv.png"><p>pixiv</p></li>!-->
-                <li><a href="https://www.nicovideo.jp/user/21871154"><img src="pic/niconico.png" alt="niconico"><p>niconico</p></a></li>
-                <li><a href="https://www.youtube.com/channel/UC2RKVozHbOYK5ONKRRYO5Kw"><img src="pic/yt.png" alt="youtube"><p>youtube</p></a></li>
-                <li><a href="https://github.com/sgr-sato-yuri"><img src="pic/github.png" alt="github"><p>github</p></a></li>
-            </ul>
+        <div class="main-left">
+            <div class="main-logo">
+                <h2>（仮）</h2>
+            </div>
+            <div class="main-links">
+                <ul>
+                    <li><a href="https://twitter.com/nakoto_2or3" target="_blank"><img src="pic/Twitter.png" alt="twitter"><p>twitter</p></a></li>
+                    <!--<li><img src="pic\pixiv.png"><p>pixiv</p></li>!-->
+                    <li><a href="https://www.nicovideo.jp/user/21871154"><img src="pic/niconico.png" alt="niconico"><p>niconico</p></a></li>
+                    <li><a href="https://www.youtube.com/channel/UC2RKVozHbOYK5ONKRRYO5Kw"><img src="pic/yt.png" alt="youtube"><p>youtube</p></a></li>
+                    <li><a href="https://github.com/sgr-sato-yuri"><img src="pic/github.png" alt="github"><p>github</p></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="pic-1">
-            <img src="pic/top.jpg" alt="violetfizz">
+        <div class="main-right">
+            <div class="pic-1">
+                <img src="pic/top.jpg" alt="violetfizz">
+            </div>
         </div>
     </div>
 
     <div class="about" id="about">
         <h3>about</h3>
         <p class="sub">my profile</p>
-        <p>佐藤優理のプロフィールサイトです。<br><br>
+        <p>佐藤優理のポートフォリオサイトです。<br><br>
         2019年4月にイオン北海道(株)に入社。<br>
         総菜売場担当として配属されます。<br><br>
         2022年4月に主任として異動となりますが、<br>
@@ -66,10 +73,13 @@
             <summary>自己PR</summary>
                 <div class="pr">
                     <p>　うつ状態による休職、退職を機に就労移行支援事業所への通所を経験いたしました。現在はセルフケアについての理解を深め、健康状態を維持する方法を学んだため、業務に支障をきたしません。<br>
+                        <br>
                         　通所中の訓練を通じて改めて自己分析を深めた結果、PCスキルを活かした職業に就きたいと考え、現在もプログラミングの勉強を続けています。なぜＰＣを使う仕事の中でも、事務などではなくプログラマを目指すのかについては、プログラマとして働くうえで自身が他者よりも適していると思う点が三つあるためです。一つ目は間違いを恐れないこと、二つ目は新たな知識を進んで取り入れること、三つ目は整理整頓が得意というところです。<br>
+                        <br>
                         　一つ目の間違いを恐れないことというのは、プログラミングをするうえで最初から完璧なコードを書くことにこだわらず、間違いを修正しながらコーディングをするという点で適していると考えます。<br>
                         　二つ目の新たな知識を進んで取り入れることというのは、技術の更新が激しいIT業界では必須の適性であると考えています。具体的には、前職では販促担当から教わった技術で、社用PCという限られた環境でExcelを使用した商品PR画像作成をしたり、業務効率改善のため独学でVBAを学び、事業部単位の売上実績から自店の実績をフィルターして、ABC分析に基づいた色分けをするマクロを作成したりしました。<br>
                         　三つ目の整理整頓が得意という点は、自分だけでなく、他者から見てもわかりやすいコードを書くという点で活かせると考えております。学生時代には卒業論文では奈良時代の文学作品における蛙の表現というテーマで執筆をしました。自分の興味のある分野を、知識の無い他人に説明しても理解してもらえるようにする、という点を第一に考え、論理的で伝わりやすさを念頭に置いた文を書くことに注意して執筆をした経験は、コードの伝わりやすさにも活かせると考えております。<br>
+                        <br>
                         　初めての転職で、経験が足りないところも多々ございますが、何卒よろしくお願い申し上げます。
                         </p>
                 </div>
@@ -80,10 +90,13 @@
     <div class="illust" id="illust">
         <h3>illust</h3>
         <p class="sub">my works</p>
+        <div class="bg">
+            <div class="large" id="large" onclick="closepic()"></div>
+        </div>
         <ul class="illust-links">
-            <li><img src="pic/top1.jpg" alt="wistaria"><p></p></li>
-            <li><img src="pic/top2.jpg" alt="lily"><p></p></li>
-            <li><img src="pic/top3.jpg" alt="naepop"><p></p></li>
+            <li><img class="pic" src="pic/top1.jpg" alt="wistaria"><p></p></li>
+            <li><img class="pic" src="pic/top2.jpg" alt="lily"><p></p></li>
+            <li><img class="pic" src="pic/top3.jpg" alt="naepop"><p></p></li>
         </ul>
     </div>
 
@@ -99,11 +112,15 @@
                             <input class="slider" type="range" name="seek" value="0" step="0.1">
                             <span class="length">0:00</span></p>
                         </div>
-                        <div class="button">
-                            <button class="play">▶</button>
-                            <button class="pause">||</button>
-                            <button class="stop">■</button>
-                            <span>volume<input class="volume" type="range" name="vol" min="0" max="1" value="1" step="0.1"></span>
+                        <div class="wrapper">
+                            <div class="button">
+                                <button class="play">▶</button>
+                                <button class="pause">||</button>
+                                <button class="stop">■</button>
+                            </div>
+                            <div class="volume">
+                                <span>volume<input class="volume" type="range" name="vol" min="0" max="1" value="1" step="0.1"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -209,5 +226,43 @@
     <script src="jstest.js"></script>
     <script src="cc.js"></script>
     <script src="hb.js"></script>
+    <script>
+        var jumps = document.querySelectorAll(".jump");       
+        for (let i = 0; i < jumps.length; i++) {
+            jumps[i].addEventListener("click", event => {
+                event.preventDefault();
+                var href = event.target.id;
+                var address = String(href).substr(1);
+                var target = document.getElementById(address);
+                console.log(target);
+                if (target) {
+                    var position = target.offsetTop;
+                    console.log(position);
+                    window.scrollTo({top:position, behavior:"smooth"});
+                    console.log("meu");
+                }
+            });
+        }
+
+        var pics = document.querySelectorAll(".pic");
+        var newlarge = document.createElement("img");
+        var bg = document.querySelector(".bg");
+        var large = document.getElementById("large")
+        var picflag = 0;
+        for (let i=0; i<pics.length; i++){
+            pics[i].addEventListener("click", event => {
+                bg.style.display = "flex";
+                var picsrc = event.target.src;
+                var picalt = event.target.alt;
+                newlarge.id = "largepic";
+                newlarge.src = picsrc;
+                newlarge.alt = picalt;
+                large.appendChild(newlarge);
+            });
+        }
+        function closepic(){
+            bg.style.display = "none";
+        }
+    </script>
     </body>
 </html>
