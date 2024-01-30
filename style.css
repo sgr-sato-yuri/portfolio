@@ -350,7 +350,7 @@ footer{
         margin: 10px;
     }
 
-    form[name=colorcode]{
+    form{
         font-size: 30px;
     }
     input{
