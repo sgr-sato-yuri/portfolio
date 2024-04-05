@@ -113,6 +113,9 @@ h2{
     margin-left: 5vw;
     text-align: left;
 }
+ul{
+    list-style: none
+}
 
 /*イラスト*/
 .illust{
@@ -350,7 +353,7 @@ footer{
         margin: 10px;
     }
 
-    form[name=colorcode]{
+    form{
         font-size: 30px;
     }
     input{
