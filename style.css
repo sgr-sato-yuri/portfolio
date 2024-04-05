@@ -113,8 +113,10 @@ h2{
     margin-left: 5vw;
     text-align: left;
 }
-.kiero li{
+.kiero{
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 /*イラスト*/
 .illust{
