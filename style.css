@@ -24,7 +24,7 @@ header{
     align-items: center;
     z-index: 1;
 }
-ul{
+.header-list ul{
     list-style: none;
     display: flex;
     justify-content: flex-end;
@@ -113,10 +113,9 @@ h2{
     margin-left: 5vw;
     text-align: left;
 }
-ul{
-    list-style: none
+.about > ul > li{
+    list-style: none;
 }
-
 /*イラスト*/
 .illust{
     margin-bottom: 79px;
@@ -353,7 +352,7 @@ footer{
         margin: 10px;
     }
 
-    form{
+    form[name=colorcode]{
         font-size: 30px;
     }
     input{
