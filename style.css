@@ -24,7 +24,7 @@ header{
     align-items: center;
     z-index: 1;
 }
-.header-list ul{
+ul{
     list-style: none;
     display: flex;
     justify-content: flex-end;
