@@ -1,62 +1,108 @@
 //Hit & Blow
 const ten = [0,1,2,3,4,5,6,7,8,9];
 
-var your_xxx = document.getElementById("xxx").value;
-var your_xx = document.getElementById("xx").value;
-var your_x = document.getElementById("x").value;
+var your_xxx = document.getElementById("xxx");
+var your_xx = document.getElementById("xx");
+var your_x = document.getElementById("x");
 
-var xxx = 0;
-var xx = 0;
-var x = 0;
+var xxx;
+var xx;
+var x;
 
 var hit = 0;
 var blow = 0;
 var ent = 0;
 
+var answerG = "aaa";
+
 var hist = document.getElementById("history");
+
+const entbtn = document.getElementById("ent");
+const clrbtn = document.getElementById("clear");
+
+entbtn.disabled = true;
+clrbtn.disabled = true;
 
 
 function rand(array) {
     return array.slice().sort(() => Math.random() - 0.5);
 }
 
-var answerG = "aaa";
 function resetans() {
+    entbtn.disabled = false;
+    clrbtn.disabled = false;
     var shuffle = rand(ten);
     xxx = shuffle[0];
     xx = shuffle[1];
     x = shuffle[2];
     let answer = String(xxx) + String(xx) + String(x);
     answerG = answer;
-    return answer;
 }
 
 
 
 function getnum(num) {
     if(your_xxx === ""){
-        document.getElementById("xxx").value = num;
         your_xxx = num;
+        your_xxx.value = num;
+        document.getElementById(num).style.opacity = 0.5;
+    }
+    return
+    if(your_xxx === ""){
+        console.log(`case1:${num}`);
+        your_xxx = num;
+        document.getElementById("xxx").value = num;
         document.getElementById(num).style.opacity = 0.5;
     }else if(your_xx === ""){
-        if(num == your_xxx){
+        if(your_xxx === num){//同じ数字を選択した時
+            console.log(`case2:${num}`);
             document.getElementById(num).style.opacity = 1;
             document.getElementById("xxx").value = "";
             your_xxx = "";
-        }else{
-        document.getElementById("xx").value = num; 
-        your_xx = num;
-        document.getElementById(num).style.opacity = 0.5;
-        }
-    }else if(your_x === ""){
-        if(num == your_xx){
+        }else if(your_xx === num){
+            console.log(`case3:${num}`);
             document.getElementById(num).style.opacity = 1;
             document.getElementById("xx").value = "";
             your_xx = "";
         }else{
-        document.getElementById("x").value = num; 
-        your_x = num;
-        document.getElementById(num).style.opacity = 0.5;
+            console.log(`case4:${num}`);
+            your_xx = num;
+            document.getElementById("xx").value = num; 
+            document.getElementById(num).style.opacity = 0.5;
+        }
+    }else if(your_x === ""){
+        if(your_xxx === num){//同じ数字を選択した時
+            console.log(`case5:${num}`);
+            document.getElementById(num).style.opacity = 1;
+            document.getElementById("xxx").value = "";
+            your_xxx = "";
+        }else if(your_xx === num){
+            console.log(`case6:${num}`);
+            document.getElementById(num).style.opacity = 1;
+            document.getElementById("xx").value = "";
+            your_xx = "";
+        }else{
+            console.log(`case7:${num}`);
+            your_x = num;
+            document.getElementById("x").value = num; 
+            document.getElementById(num).style.opacity = 0.5;
+        }
+    }else{
+        if(your_xxx === num){//同じ数字を選択した時
+            console.log(`case8:${num}`);
+            document.getElementById(num).style.opacity = 1;
+            document.getElementById("xxx").value = "";
+            your_xxx = "";
+        }else if(your_xx === num){
+            console.log(`case9:${num}`);
+            document.getElementById(num).style.opacity = 1;
+            document.getElementById("xx").value = "";
+            your_xx = "";
+        }else{
+            console.log(`case10:${num}`);
+            document.getElementById(num).style.opacity = 1;
+            document.getElementById("x").value = "";
+            your_x = "";
         }
     }
 }
