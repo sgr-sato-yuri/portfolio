@@ -77,9 +77,21 @@ function judge() {
         ent = ent + 1;
 
         history();
+        if (ent === 4) {
+            document.getElementById("result").textContent = "GAME OVER...";
+            your_xxx.readonly = false;
+            your_xx.readonly = false;
+            your_x.readonly = false;
+            your_xxx.textContent = xxx;
+            your_xx.textContent = xx;
+            your_x.textContent = x;
+            your_xxx.readonly = true;
+            your_xx.readonly = true;
+            your_x.readonly = true;        
+        }
     }else{
         alert("error");
-    }
+    }    
 }
 
 function history() { 
