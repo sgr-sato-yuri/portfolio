@@ -75,10 +75,12 @@ function judge() {
         your_xx == xxx || your_xx == x?blow = blow + 1:"";
         your_x == xxx || your_x == xx?blow = blow + 1:"";
         ent = ent + 1;
+        console.log(ent)
 
         history();
-        if (ent === 4) {
+        if (ent === 5) {
             document.getElementById("result").textContent = "GAME OVER...";
+
             your_xxx.readonly = false;
             your_xx.readonly = false;
             your_x.readonly = false;
