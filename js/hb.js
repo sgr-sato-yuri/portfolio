@@ -1,9 +1,9 @@
 //Hit & Blow
 const ten = [0,1,2,3,4,5,6,7,8,9];
 
-var your_xxx = document.getElementById("xxx");
-var your_xx = document.getElementById("xx");
-var your_x = document.getElementById("x");
+const your_xxx = document.getElementById("xxx");
+const your_xx = document.getElementById("xx");
+const your_x = document.getElementById("x");
 
 var xxx;
 var xx;
@@ -15,7 +15,7 @@ var ent = 0;
 
 var answerG = "aaa";
 
-var hist = document.getElementById("history");
+const hist = document.getElementById("history");
 
 const entbtn = document.getElementById("ent");
 const clrbtn = document.getElementById("clear");
@@ -39,126 +39,100 @@ function resetans() {
     answerG = answer;
 }
 
-
+function setnum(form,num){
+    console.log("setnum");
+    form.value = num;
+    document.getElementById(num).style.opacity = 0.5;
+};
+function samenum(form,num){
+    console.log("samenum");
+    form.value = "";
+    document.getElementById(num).style.opacity = 1;
+};
 
 function getnum(num) {
-    if(your_xxx === ""){
-        your_xxx = num;
-        your_xxx.value = num;
-        document.getElementById(num).style.opacity = 0.5;
-    }
-    return
-    if(your_xxx === ""){
-        console.log(`case1:${num}`);
-        your_xxx = num;
-        document.getElementById("xxx").value = num;
-        document.getElementById(num).style.opacity = 0.5;
-    }else if(your_xx === ""){
-        if(your_xxx === num){//同じ数字を選択した時
-            console.log(`case2:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("xxx").value = "";
-            your_xxx = "";
-        }else if(your_xx === num){
-            console.log(`case3:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("xx").value = "";
-            your_xx = "";
+    if(your_xxx.value == ""){
+        if(your_xx.value == num){
+            samenum(your_xx, num);
+        }else if(your_x.value == num){
+            samenum(your_x, num);
         }else{
-            console.log(`case4:${num}`);
-            your_xx = num;
-            document.getElementById("xx").value = num; 
-            document.getElementById(num).style.opacity = 0.5;
+            setnum(your_xxx, num);
         }
-    }else if(your_x === ""){
-        if(your_xxx === num){//同じ数字を選択した時
-            console.log(`case5:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("xxx").value = "";
-            your_xxx = "";
-        }else if(your_xx === num){
-            console.log(`case6:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("xx").value = "";
-            your_xx = "";
+    }else if(your_xx.value == ""){
+        if(your_xxx.value == num){
+            samenum(your_xxx, num);
+        }else if(your_xx.value == num){
+            samenum(your_xx, num);
         }else{
-            console.log(`case7:${num}`);
-            your_x = num;
-            document.getElementById("x").value = num; 
-            document.getElementById(num).style.opacity = 0.5;
+            setnum(your_xx, num);
         }
-    }else{
-        if(your_xxx === num){//同じ数字を選択した時
-            console.log(`case8:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("xxx").value = "";
-            your_xxx = "";
-        }else if(your_xx === num){
-            console.log(`case9:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("xx").value = "";
-            your_xx = "";
+    }else if(your_x.value == ""){
+        if(your_xxx.value == num){
+            samenum(your_xxx, num);
+        }else if(your_xx.value == num){
+            samenum(your_xx, num);
         }else{
-            console.log(`case10:${num}`);
-            document.getElementById(num).style.opacity = 1;
-            document.getElementById("x").value = "";
-            your_x = "";
+            setnum(your_x, num);
         }
-    }
+    }else if(your_xxx.value == num){
+        samenum(your_xxx, num);
+    }else if(your_xx == num){
+        samenum(your_xx, num);
+    }else if(your_x == num){
+        samenum(your_x, num);
+    };
+}
+
+function history() { 
+    hist.rows[ent].cells[0].textContent = "" + your_xxx.value + your_xx.value + your_x.value;
+    hist.rows[ent].cells[1].textContent = hit;
+    hist.rows[ent].cells[2].textContent = blow;
+    hit == 3 ? document.getElementById("result").textContent = "CONGRATULATION!":"";
+    your_xxx.style.fontWeight = "bold";
+    your_xx.style.fontWeight = "bold";
+    your_x.style.fontWeight = "bold";
+
+    hit = 0;
+    blow = 0;
 }
 
 function judge() {
-    if(your_x !== ""){
+    if(your_xxx !== "" || your_xx !== "" || your_x.value !== ""){
         xxx = answerG.slice(0,1);
         xx = answerG.slice(1,2);
         x = answerG.slice(2,3);
 
-        your_xxx == xxx ? hit = hit + 1 : "";
-        your_xx == xx ? hit = hit + 1 : "";
-        your_x == x ? hit = hit + 1 : "";
+        your_xxx.value == xxx ? hit = hit + 1 : "";
+        your_xx.value == xx ? hit = hit + 1 : "";
+        your_x.value == x ? hit = hit + 1 : "";
 
-        your_xxx == xx || your_xxx == x?blow = blow + 1:"";
-        your_xx == xxx || your_xx == x?blow = blow + 1:"";
-        your_x == xxx || your_x == xx?blow = blow + 1:"";
+        your_xxx.value == xx || your_xxx.value == x?blow = blow + 1:"";
+        your_xx.value == xxx || your_xx.value == x?blow = blow + 1:"";
+        your_x.value == xxx || your_x.value == xx?blow = blow + 1:"";
         ent = ent + 1;
-        console.log(ent)
 
         history();
+        clearanswer();
         if (ent === 5) {
             document.getElementById("result").textContent = "GAME OVER...";
 
-            your_xxx.readonly = false;
-            your_xx.readonly = false;
-            your_x.readonly = false;
-            your_xxx.textContent = xxx;
-            your_xx.textContent = xx;
-            your_x.textContent = x;
-            your_xxx.readonly = true;
-            your_xx.readonly = true;
-            your_x.readonly = true;        
+            your_xxx.style.fontWeight = "bold";
+            your_xx.style.fontWeight = "bold";
+            your_x.style.fontWeight = "bold";
+            your_xxx.value = xxx;
+            your_xx.value = xx;
+            your_x.value = x;
         }
     }else{
         alert("error");
     }    
 }
 
-function history() { 
-    hist.rows[ent].cells[0].textContent = "" + your_xxx + your_xx + your_x;
-    hist.rows[ent].cells[1].textContent = hit;
-    hist.rows[ent].cells[2].textContent = blow;
-    hit == 3 ? document.getElementById("result").textContent = "CONGRATULATION!": "";
-
-    hit = 0;
-    blow = 0;
-}
-
 function clearanswer() {
-    document.getElementById("xxx").value = "";
-    document.getElementById("xx").value = "";
-    document.getElementById("x").value = "";
-    your_xxx = "";
-    your_xx = "";
-    your_x = "";
+    your_xxx.value = "";
+    your_xx.value = "";
+    your_x.value = "";
     var i = 0
     while (i < 10) {
         document.getElementById(i).style.opacity = 1;
@@ -167,6 +141,9 @@ function clearanswer() {
 }
 function resetall() {
     clearanswer();
+    your_xxx.style.fontWeight = "normal";
+    your_xx.style.fontWeight = "normal";
+    your_x.style.fontWeight = "normal";
     document.getElementById("result").textContent = "GAME START!";
     while(0<ent){
         hist.rows[ent].cells[0].textContent = "";

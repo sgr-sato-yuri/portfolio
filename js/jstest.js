@@ -79,21 +79,3 @@ volumeBar.addEventListener('input', (e) => {
     seekBar.value = cTime;
   }
 
-
-var jumps = document.querySelectorAll(".jump");       
-for (let i = 0; i < jumps.length; i++) {
-    jumps[i].addEventListener("click", event => {
-        event.preventDefault();
-        var href = event.target.id;
-        var address = String(href).substr(1);
-        var target = document.getElementById(address);
-        console.log(target);
-        if (target) {
-            var position = target.offsetTop;
-            console.log(position);
-            window.scrollTo({top:position, behavior:"smooth"});
-            console.log("meu");
-        }
-    });
-}
-
